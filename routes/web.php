@@ -18,7 +18,34 @@ Route::get('/', function () {
 });
 
 
-Route::get('/dbtest', function () {
-    return view('dbtest');
+Route::get('/about', function () {
+    // return view('welcome');
+    return "Hi about page";
 });
+
+
+Route::get('/contact', function () {
+    // return view('welcome');
+    return "Hi contact page";
+});
+
+
+Route::get('/post/{id}/{name}', function ($id, $name) {
+    // return view('welcome');
+    return "Hello " . $name . " Your id number " . $id; 
+});
+
+
+
+
+Route::group(['middleware' => ['web']], function () {
+
+
+    
+});
+
+
+// Route::get('/dbtest', function () {
+//     return view('dbtest');
+// });
 
